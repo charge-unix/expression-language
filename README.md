@@ -27,13 +27,16 @@ let result = expressionLanguage.evaluate(
 ```
 #### Object and Array access
 ```javascript
-let expression = 'a[2] === "three" and b.myMethod(a[1]) === "bar two"';
+let expression = 'a[2] === "three" and b.myMethod(a[1]) === "bar two" and b.myAsyncMethod("world") === "hello world"';
 let values = {
     a: ["one", "two", "three"], 
     b: {
         myProperty: "foo", 
         myMethod: function(word) {
             return "bar " + word;
+        },
+        myAsyncMethod: async function (word) {
+            return "hello " + word;
         }
     }
 };
