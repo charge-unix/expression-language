@@ -28,7 +28,6 @@ class ExpressionLanguage {
     });
 
     _defineProperty(this, "evaluate", async (expression, values = {}) => {
-      console.log(this.parse(expression, Object.keys(values)).getNodes());
       return await this.parse(expression, Object.keys(values)).getNodes().evaluate(this.functions, values);
     });
 
